@@ -4,16 +4,16 @@
     <title>Maquetado</title>
     <script src="Maquetado.js" language="javascript" type="text/javascript"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="Maquetado.css">
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar fixed-top navbar-light bg-light">
         <div class="container-fluid">
             <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                <li class="nav-item" role="home">
-                    <i class="bi bi-house"></i>
-                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="false">Inicio</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="pills-about-tab" data-bs-toggle="pill" data-bs-target="#pills-about" type="button" role="tab" aria-controls="pills-about" aria-selected="true">Sobre mí</button>
@@ -34,51 +34,101 @@
             <button class="btn btn-outline-primary">Cerrar sesión</button>
         </div>
     </nav>
-    <div class="row">
-        <div class="card">
-            <img src="resources/portada.jpg" style="height:200px;">
-            <div class="d-flex flex-column align-items-center">
-                <div style="width: 125px;">
-                    <img src="resources/perfil.jpg" class="rounded-circle img-thumbnail" style="margin-top: -50%">
-                </div>
-                <div class="text-center pb-2">
-                    <h5>Juan Benedetti</h5>
-                    <h6>Desarrollador Full Stack</h6>
-                </div>
+    <div class="card">
+        <img src="resources/portada.jpg" style="height:200px;">
+        <div class="d-flex flex-column align-items-center">
+            <div style="width: 125px;">
+                <img src="resources/perfil.jpg" class="rounded-circle img-thumbnail" style="margin-top: -50%">
+            </div>
+            <div class="text-center pb-2">
+                <h5>Juan Benedetti</h5>
+                <h6>Desarrollador Web Full Stack</h6>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="card mt-3">
+            <div class="card-header d-flex" style="justify-content: end;">
+                <i class="bi bi-pencil-square"></i>
+            </div>
             <div class="card-body">
                 <h5 class="card-title">Sobre mí</h5>
-                lorem ipsum
+                <p>
+                    Suspendisse lectus nibh, tincidunt ut consectetur vel, maximus viverra risus. 
+                    Phasellus dapibus auctor mi eget semper. Maecenas imperdiet dui eu ligula molestie semper. 
+                    Donec non nunc eget orci tincidunt semper. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                    Sed interdum semper ex. 
+                    Nullam aliquet maximus sapien vitae varius. 
+                </p>
             </div>
         </div>
         <div class="card mt-3">
+            <div class="card-header d-flex" style="justify-content: end;">
+                <i class="bi bi-pencil-square"></i>
+            </div>
             <div class="card-body">
                 <h5 class="card-title">Educación</h5>
-                lorem ipsum
+                <ul>
+                    <li>Nulla vulputate diam id nisl gravida, eget condimentum neque porttitor.</li>
+                    <li>Phasellus imperdiet risus non consectetur hendrerit.</li>
+                    <li>Maecenas semper quam ut quam accumsan varius.</li>
+                </ul>
             </div>
         </div>
         <div class="card mt-3">
+            <div class="card-header d-flex" style="justify-content: end;">
+                <i class="bi bi-pencil-square"></i>
+            </div>
             <div class="card-body">
                 <h5 class="card-title">Aptitudes</h5>
-                lorem ipsum
+                <p>
+                    Proin vitae efficitur est. 
+                    In varius accumsan suscipit.
+                     Nunc ac pretium lectus, ut vulputate nisi. 
+                     Sed in sem vel mauris finibus mollis sed id turpis. 
+                     Fusce sagittis, dui ut commodo volutpat, leo diam elementum lorem, et pretium nulla dolor ut elit. 
+                     Nam commodo erat sit amet arcu consectetur porta. 
+                     Suspendisse potenti. 
+                     Etiam at rutrum felis. 
+                     Fusce pretium nulla et dapibus auctor. 
+                     Donec eget ante ante. Vivamus vel rhoncus dui. 
+                     Aliquam erat volutpat. 
+                     Praesent nisi nulla, maximus vitae augue nec, finibus lobortis ex. 
+                </p>
             </div>
         </div>
         <div class="card mt-3">
+            <div class="card-header d-flex" style="justify-content: end;">
+                <i class="bi bi-pencil-square"></i>
+            </div>
             <div class="card-body">
                 <h5 class="card-title">Experiencia</h5>
-                lorem ipsum
+                <p>
+                    Praesent at mi fermentum, mattis arcu ut, venenatis justo. 
+                    Suspendisse sit amet imperdiet sapien. 
+                    Pellentesque quis iaculis enim. Nam sit amet fermentum nunc, sollicitudin molestie nulla. 
+                    Interdum et malesuada fames ac ante ipsum primis in faucibus. 
+                    Nam volutpat, mauris sit amet lobortis ornare, mauris nisl finibus eros, quis finibus dui ipsum hendrerit leo. 
+                    Ut ultricies turpis ut gravida varius. Proin cursus a nisi quis hendrerit. 
+                    Vivamus suscipit arcu augue, sed luctus arcu scelerisque sit amet. 
+                </p>
             </div>
         </div>
-        <div class="card mt-3">
+        <div class="card mt-3 mb-3">
+            <div class="card-header d-flex" style="justify-content: end;">
+                <i class="bi bi-pencil-square"></i>
+            </div>
             <div class="card-body">
                 <h5 class="card-title">Contacto</h5>
-                lorem ipsum
+                <div class="container d-flex" style="flex-direction: column;">
+                    <i class="bi bi-linkedin contacto"> Proin Maximus</i>
+                    <i class="bi bi-envelope contacto"> PMaximus@ultricies.com</i>
+                    <i class="bi bi-telephone contacto"> +54 (1111) 222333</i>
+                    <i class="bi bi-twitter contacto"> @ProinMaximus</i>
+                </div>
             </div>
         </div>
     </div>
+
 </body>
 </html>
