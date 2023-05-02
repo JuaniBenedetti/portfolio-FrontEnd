@@ -1,0 +1,14 @@
+<nav class="navbar fixed-top navbar-dark bg-dark">    
+    <div class="container-fluid">
+        <a class="navbar-brand" href="https://www.argentina.gob.ar/economia/conocimiento/argentina-programa" target="_blank">
+            <img src="assets\images\logo.png" height="30" class="d-inline-block align-top">
+            #YoProgramo
+        </a>
+        <div>
+            <a *ngIf="linkedInURL" [href]="linkedInURL" target="_blank">
+                <p-button icon="pi pi-linkedin" styleClass="p-button-rounded" pTooltip="LinkedIn" tooltipPosition="bottom" ></p-button>
+            </a>
+            <p-button icon="pi pi-user-edit"styleClass="p-button-rounded p-button-outlined" pTooltip="Edición" tooltipPosition="bottom" ></p-button>
+        </div>
+    </div>
+</nav>

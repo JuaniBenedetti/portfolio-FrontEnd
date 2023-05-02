@@ -1,0 +1,21 @@
+<div class="grid container lg:col-8">
+    <div class="flex col-4 lg:col-2 align-items-center justify-content-center">
+        <p-image [src]="logoEmpresa" width="75"></p-image>
+    </div>
+    <div class="col">
+        <div class="grid">
+            <div class="col-12">
+                <h5>{{experiencia.tituloPuesto}}</h5>
+            </div>
+            <div class="col-12 md:col-4 xl:col-3 flex">
+                <p class="bold">Desde:</p><p>{{experiencia.fechaInicio | date:"MM/dd/yy"}}</p> 
+            </div>
+            <div class="col flex">
+                <p class="bold">Hasta:</p><p>{{experiencia.fechaFin | date:"MM/dd/yy"}}<p>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="experiencia.descripcion" class="col-12">
+        <p>{{experiencia.descripcion}}</p>
+    </div>
+</div>
