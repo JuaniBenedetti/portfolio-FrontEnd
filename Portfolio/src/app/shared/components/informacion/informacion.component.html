@@ -1,0 +1,16 @@
+<div id="separador"></div>
+<div class="card">
+    <img [src]="coverURL" style="height:200px">
+    <div class="d-flex flex-column align-items-center">
+        <div style="width: 125px;">
+            <img [src]="profileURL" class="rounded-circle img-thumbnail" style="margin-top: -50%">
+        </div>
+        <div class="text-center pb-2">
+            <h5>{{informacion.apellidoNombre}}</h5>
+            <h6>{{informacion.titulo}}</h6>
+        </div>
+        <div class="text-center pb-2">
+            <p>{{informacion.info}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="grid container lg:col-8">
+    <div class="flex col-4 md:col-2 align-items-center justify-content-center">
+        <p-image [src]="logoInstitucion" width="75"></p-image>
+    </div>
+    <div class="col">
+        <div class="grid">
+            <div class="col-12">
+                <h5>{{educacion.nombreInstitucion}}</h5>
+            </div>
+            <div class="col-12 titulo">
+                <h6>{{educacion.titulo}}</h6>
+            </div>
+            <div class="col-12 md:col-4 xl:col-3 flex">
+                <p class="bold">Desde:</p><p>{{educacion.fechaInicio | date:"MM/dd/yy"}}</p>
+            </div>
+            <div class="col flex">
+                <p class="bold">Hasta:</p><p>{{educacion.fechaFin | date:"MM/dd/yy"}}</p>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="educacion.descripcion" class="col-12">
+        <p>{{educacion.descripcion}}</p>
+    </div>
+</div>

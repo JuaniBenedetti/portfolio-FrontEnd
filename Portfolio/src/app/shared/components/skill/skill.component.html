@@ -1,0 +1,11 @@
+<div class="container">
+    <h3>Mis habilidades</h3>
+    <div class="containerKnob grid lg:col-8">
+        <ng-container *ngFor="let skill of skills">
+            <div class="col-6 sm:col-3 xl:col-2">
+                <app-item-skill [skill]="skill"></app-item-skill>
+            </div>
+        </ng-container>  
+    </div>
+</div>
+<p-divider></p-divider>
