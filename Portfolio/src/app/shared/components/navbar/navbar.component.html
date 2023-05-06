@@ -8,7 +8,8 @@
             <a *ngIf="linkedInURL" [href]="linkedInURL" target="_blank">
                 <p-button icon="pi pi-linkedin" styleClass="p-button-rounded" pTooltip="LinkedIn" tooltipPosition="bottom" ></p-button>
             </a>
-            <p-button icon="pi pi-user-edit"styleClass="p-button-rounded p-button-outlined" pTooltip="Edición" tooltipPosition="bottom" ></p-button>
+            <p-button *ngIf="!modoEdicion" (click)="login()" icon="pi pi-user-edit" styleClass="p-button-rounded p-button-outlined" pTooltip="Edición" tooltipPosition="bottom"></p-button>
+            <p-button *ngIf="modoEdicion" (click)="logout()" icon="pi pi-sign-out" styleClass="p-button-rounded p-button-success" pTooltip="Salir" tooltipPosition="bottom"></p-button>
         </div>
     </div>
 </nav>

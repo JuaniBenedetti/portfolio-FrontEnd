@@ -1,0 +1,9 @@
+<form class="grid flex-column" [formGroup]="form" (ngSubmit)="form.valid ? ingresar() : null">
+    <span class="p-float-label">
+        <input id="clave" type="password" pInputText autofocus formControlName="clave"/>
+        <label htmlFor="clave">Clave</label>
+    </span>
+    <small *ngIf="form.get('clave')?.hasError('required') && form.touched">Debe ingresar una clave</small>
+    <p-button type="submit" class="align-self-center" label="Ingresar"></p-button>
+</form>
+

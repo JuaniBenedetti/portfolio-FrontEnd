@@ -1,0 +1,11 @@
+<ng-container *ngIf="usuario">
+    <app-navbar [linkedInURL]="linkedInURL"></app-navbar>
+    <app-informacion [informacion]="usuario.informacion" (emitUpdateLinedInURL)="updateLinkedInURL($event)"></app-informacion>
+    <app-experiencia [experiencias]="usuario.experiencias"></app-experiencia>
+    <app-educacion [educacion]="usuario.educacion"></app-educacion>
+    <app-skill [skills]="usuario.skills"></app-skill>
+    <app-proyecto [proyectos]="usuario.proyectos"></app-proyecto>
+</ng-container>
+<app-footer></app-footer>
+<p-toast key="tc" position="top-center" [style]="{'max-width': '120px'}"></p-toast>
+<p-toast key="bc" position="bottom-center"></p-toast>

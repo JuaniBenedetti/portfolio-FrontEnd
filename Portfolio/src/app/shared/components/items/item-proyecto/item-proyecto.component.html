@@ -1,3 +1,7 @@
+<div *ngIf="modoEdicion" class="grid lg:col-8 p-0 flex justify-content-end btn-grid">
+    <p-button icon="pi pi-pencil" styleClass="p-button-rounded" class="btn-size-sm btn-animation" (click)="edit()"></p-button>
+    <p-button icon="pi pi-trash" styleClass="p-button-rounded p-button-danger" class="btn-size-sm btn-animation" (click)="delete()"></p-button>
+</div>
 <div class="grid container lg:col-8">
     <div class="col">
         <div class="grid">
@@ -5,11 +9,14 @@
                 <h5>{{proyecto.nombre}}</h5>
             </div>
             <div class="col-12 flex">
-                <p class="bold">Fecha:</p><p>{{proyecto.fecha | date:"MM/dd/yy"}}</p>
+                <p class="bold">Fecha:</p><p>{{proyecto.fecha | date:"dd/MM/yy"}}</p>
             </div>
         </div>
     </div>
     <div *ngIf="proyecto.descripcion" class="col-12">
         <p>{{proyecto.descripcion}}</p>
+    </div>
+    <div *ngIf="proyecto.evidenciaURL" class="col-12 flex">
+        <p class="bold">Referencia:</p><a [href]="proyecto.evidenciaURL" target="_blank">{{proyecto.evidenciaURL}}</a>
     </div>
 </div>

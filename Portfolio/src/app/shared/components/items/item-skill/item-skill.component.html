@@ -1,4 +1,5 @@
-<div class="flex-column">
+<div class="flex-column relative">
+    <p-button *ngIf="modoEdicion" icon="pi pi-times" styleClass="p-button-rounded p-button-danger" class="btn-size-sm btn-animation" (click)="deleteSkill()"></p-button>
     <div class="flex justify-content-center">
         <p-knob 
             [ngModel]="skill.porcentaje" 

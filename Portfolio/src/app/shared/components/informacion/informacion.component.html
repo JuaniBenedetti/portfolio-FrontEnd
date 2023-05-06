@@ -1,9 +1,11 @@
 <div id="separador"></div>
-<div class="card">
-    <img [src]="coverURL" style="height:200px">
+<div class="card customBorder">
+    <img [src]="coverURL" class="coverImg">
+    <p-button *ngIf="modoEdicion" icon="pi pi-pencil" styleClass="p-button-rounded" class="editCover" (click)="imgUploadCover.click()"></p-button>
     <div class="d-flex flex-column align-items-center">
-        <div style="width: 125px;">
-            <img [src]="profileURL" class="rounded-circle img-thumbnail" style="margin-top: -50%">
+        <div class="relative">
+            <img [src]="profileURL" class="rounded-circle img-thumbnail profileImg">
+            <p-button *ngIf="modoEdicion" icon="pi pi-pencil" styleClass="p-button-rounded" class="editProfile" (click)="imgUploadProfile.click()"></p-button>
         </div>
         <div class="text-center pb-2">
             <h5>{{informacion.apellidoNombre}}</h5>
@@ -12,5 +14,33 @@
         <div class="text-center pb-2">
             <p>{{informacion.info}}</p>
         </div>
+        <div class="btnEditarInfo">
+            <p-button 
+                *ngIf="modoEdicion"
+                (click)="editarInformacion()" 
+                label="Editar" 
+                icon="pi pi-pencil" 
+                iconPos="right" 
+                styleClass="p-button-rounded p-button-sm">
+            </p-button>
+        </div>
     </div>
 </div>
+
+<input
+    #imgUploadCover
+    (change)="selectedImage($event, 'cover')"
+    type="file" 
+    accept="image/png, image/jpeg, image/jpg" 
+    maxlength="5242880" 
+    class="file-input" 
+>
+
+<input 
+    #imgUploadProfile
+    (change)="selectedImage($event, 'profile')"
+    type="file" 
+    accept="image/png, image/jpeg, image/jpg" 
+    maxlength="5242880" 
+    class="file-input" 
+>

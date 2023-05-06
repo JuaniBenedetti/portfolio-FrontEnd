@@ -7,5 +7,67 @@
 body
     background-color: #F9F9F9
 
+
 p
     margin: 0px
+
+
+/* Cambio el color de todos los small ya que solo los utilizare para validaciones */  
+small
+  padding-left: 4px
+  color: #e24c4c
+
+
+/* Cambio el padding de todos los dialog */   
+div.p-dialog 
+  .p-dialog-header, .p-dialog-content
+    padding: 16px
+
+
+/* Hago que todos los input de los formularios ocupen el ancho completo */
+input, textarea, .p-calendar
+  width: 100%
+
+
+/* Cambio tamaño de los mensajes para que se vean bien en formato mobile */
+div.p-toast 
+  width: 20rem
+
+
+/* Agrego un tamaño personalizado para botones de tipo icono */  
+p-button.btn-size-sm 
+    .p-button.p-button-icon-only.p-button-rounded
+        height: 2rem
+        width: 2rem
+
+
+/* Hago que los input que utilcen esta clase no se rendericen */ 
+.file-input
+  display: none
+
+/* Fijo un tamaño para los logos */
+.logo
+  width: 100px
+  height: 100px
+  max-width: 100px
+
+@media only screen and (max-width: 500px) 
+  .logo 
+    width: 85px
+    height: 85px 
+  
+/* Animacion para botones que implementen la clase */  
+.btn-animation
+  animation-name: moveUpDown
+  animation-duration: 1s
+  animation-timing-function: ease-in-out
+  animation-iteration-count: infinite
+
+@keyframes moveUpDown
+  0%
+    transform: translateY(0)
+  50% 
+    transform: translateY(-3px)
+  100%
+    transform: translateY(0)
+  

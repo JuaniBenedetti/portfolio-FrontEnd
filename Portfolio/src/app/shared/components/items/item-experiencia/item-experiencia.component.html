@@ -1,6 +1,10 @@
+<div *ngIf="modoEdicion" class="grid lg:col-8 p-0 flex justify-content-end btn-grid">
+    <p-button icon="pi pi-pencil" styleClass="p-button-rounded" class="btn-size-sm btn-animation" (click)="edit()"></p-button>
+    <p-button icon="pi pi-trash" styleClass="p-button-rounded p-button-danger" class="btn-size-sm btn-animation" (click)="delete()"></p-button>
+</div>
 <div class="grid container lg:col-8">
-    <div class="flex col-4 lg:col-2 align-items-center justify-content-center">
-        <p-image [src]="logoEmpresa" width="75"></p-image>
+    <div class="flex col-4 md:col-2 align-items-center justify-content-center">
+        <img [src]="logoEmpresa" class="img-thumbnail logo"/>
     </div>
     <div class="col">
         <div class="grid">
@@ -8,10 +12,10 @@
                 <h5>{{experiencia.tituloPuesto}}</h5>
             </div>
             <div class="col-12 md:col-4 xl:col-3 flex">
-                <p class="bold">Desde:</p><p>{{experiencia.fechaInicio | date:"MM/dd/yy"}}</p> 
+                <p class="bold">Desde:</p><p>{{experiencia.fechaInicio | date:"dd/MM/yy"}}</p> 
             </div>
             <div class="col flex">
-                <p class="bold">Hasta:</p><p>{{experiencia.fechaFin | date:"MM/dd/yy"}}<p>
+                <p class="bold">Hasta:</p><p>{{experiencia.fechaFin | date:"dd/MM/yy"}}<p>
             </div>
         </div>
     </div>

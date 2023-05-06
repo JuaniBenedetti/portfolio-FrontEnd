@@ -1,7 +1,10 @@
 <div class="container">
-    <h3>Mi educación</h3>
+    <div class="flex align-items-center">
+        <h3>Educación</h3>
+        <p-button *ngIf="modoEdicion" icon="pi pi-plus" styleClass="p-button-rounded" class="btn-size-sm" (click)="newEducacion()"></p-button>
+    </div>
     <ng-container *ngFor="let edu of educacion">
-        <app-item-educacion [educacion]="edu"></app-item-educacion>
+        <app-item-educacion [educacion]="edu" [modoEdicion]="modoEdicion" (emitUpdateList)="updateList($event)"></app-item-educacion>
     </ng-container>  
 </div>
 <p-divider></p-divider>

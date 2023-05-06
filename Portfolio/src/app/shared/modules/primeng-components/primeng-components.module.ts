@@ -5,7 +5,13 @@ import { DividerModule } from 'primeng/divider';
 import { CardModule } from 'primeng/card';
 import { ImageModule } from 'primeng/image';
 import { KnobModule } from 'primeng/knob';
-
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { InputTextModule } from 'primeng/inputtext';
+import { ToastModule } from 'primeng/toast';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputMaskModule } from 'primeng/inputmask';
+import { CalendarModule } from 'primeng/calendar';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 
 
@@ -17,7 +23,14 @@ import { KnobModule } from 'primeng/knob';
     DividerModule,
     CardModule,
     ImageModule,
-    KnobModule
+    KnobModule,
+    DynamicDialogModule,
+    InputTextModule,
+    ToastModule,
+    InputTextareaModule,
+    InputMaskModule,
+    CalendarModule,
+    ConfirmDialogModule
   ],
   exports: [
     ButtonModule,
@@ -25,7 +38,14 @@ import { KnobModule } from 'primeng/knob';
     DividerModule,
     CardModule,
     ImageModule,
-    KnobModule
+    KnobModule,
+    DynamicDialogModule,
+    InputTextModule,
+    ToastModule,
+    InputTextareaModule,
+    InputMaskModule,
+    CalendarModule,
+    ConfirmDialogModule
   ]
 })
 export class PrimengComponentsModule { }

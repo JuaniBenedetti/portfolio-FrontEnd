@@ -1,3 +1,4 @@
+import { Imagen } from "./Imagen";
 
 export class Educacion {
     idEducacion: number;
@@ -6,5 +7,5 @@ export class Educacion {
     titulo: string;
     nombreInstitucion: string;
     descripcion: string;
-    logoInstitucion: Uint8Array;
+    imgLogoInstitucion: Imagen;
 }

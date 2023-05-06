@@ -1,0 +1,37 @@
+<form class="grid flex-column" [formGroup]="experiencia" (ngSubmit)="experiencia.valid ? guardar() : null">
+    <span class="p-float-label">
+        <input id="puesto" pInputText formControlName="tituloPuesto"/>
+        <label htmlFor="puesto">Puesto</label>
+    </span>
+    <small *ngIf="experiencia.get('tituloPuesto')?.hasError('required') && experiencia.touched">Debe ingresar un puesto</small>
+    <span class="p-float-label">
+        <p-calendar id="fechaInicio" formControlName="fechaInicio" [maxDate]="fechaHoy" [touchUI]="true" dateFormat="dd/mm/yy"></p-calendar>
+        <label htmlFor="fechaInicio">Fecha de inicio</label>
+    </span>
+    <small *ngIf="experiencia.get('fechaInicio')?.hasError('required') && experiencia.touched">Debe ingresar una fecha de inicio</small>
+    <span class="p-float-label">
+        <p-calendar id="fechaFin" formControlName="fechaFin" [maxDate]="fechaHoy" [touchUI]="true" dateFormat="dd/mm/yy"></p-calendar>
+        <label htmlFor="fechaFin">Fecha de finalización</label>
+    </span>
+    <span class="p-float-label">
+        <textarea id="descripcion" rows="4" cols="30" pInputTextarea [autoResize]="true" formControlName="descripcion" maxlength="255"></textarea>
+        <label htmlFor="info">Descripción</label>
+    </span>
+    <span class="flex justify-content-between">
+        <p-button label="Subir logo" icon="pi pi-upload" iconPos="right" (click)="imgUpload.click()"></p-button>
+        <p-button *ngIf="imgFile" label="Eliminar" icon="pi pi-file-excel" styleClass="p-button-danger p-button-text" (click)="eliminarArchivo()"></p-button>
+    </span> 
+    <span class="flex justify-content-between">
+        <p-button (click)="volver()" label="Volver" styleClass="p-button-outlined p-button-secondary"></p-button>
+        <p-button type="submit" label="Guardar"></p-button>
+    </span>
+</form>
+
+<input 
+#imgUpload
+(change)="selectedImage($event)"
+type="file" 
+accept="image/png, image/jpeg, image/jpg" 
+maxlength="5242880" 
+class="file-input" 
+>

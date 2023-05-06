@@ -1,0 +1,16 @@
+<form class="grid flex-column" [formGroup]="skill" (ngSubmit)="skill.valid ? guardar() : null">
+    <span class="p-float-label">
+        <input id="nombre" pInputText formControlName="nombre"/>
+        <label htmlFor="nombre">Nombre</label>
+    </span>
+    <small *ngIf="skill.get('nombre')?.hasError('required') && skill.touched">Debe ingresar un nombre</small>
+    <span class="p-float-label">
+        <input id="porcentaje" pInputText formControlName="porcentaje" mask="000"/>
+        <label htmlFor="porcentaje">Porcentaje</label>
+    </span>
+    <small *ngIf="skill.get('porcentaje')?.hasError('required') && skill.touched">Debe ingresar un porcentaje</small>
+    <span class="flex justify-content-between">
+        <p-button (click)="volver()" label="Volver" styleClass="p-button-outlined p-button-secondary"></p-button>
+        <p-button type="submit" label="Guardar"></p-button>
+    </span>
+</form>

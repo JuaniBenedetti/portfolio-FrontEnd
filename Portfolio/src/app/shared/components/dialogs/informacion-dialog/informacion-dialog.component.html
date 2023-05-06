@@ -1,0 +1,23 @@
+<form class="grid flex-column" [formGroup]="informacion" (ngSubmit)="informacion.valid ? guardar() : null">
+    <span class="p-float-label">
+        <input id="apellidoNombre" pInputText formControlName="apellidoNombre"/>
+        <label htmlFor="apellidoNombre">Apellido y nombre</label>
+    </span>
+    <small *ngIf="informacion.get('apellidoNombre')?.hasError('required') && informacion.touched">Debe ingresar un apellido y un nombre</small>
+    <span class="p-float-label">
+        <input id="titulo" pInputText formControlName="titulo"/>
+        <label htmlFor="titulo">Título</label>
+    </span>
+    <span class="p-float-label">
+        <input id="linkedInURL" pInputText formControlName="linkedInURL"/>
+        <label htmlFor="linkedInURL">URL LinkedIn</label>
+    </span>
+    <span class="p-float-label">
+        <textarea id="info" rows="4" cols="30" pInputTextarea [autoResize]="true" formControlName="info" maxlength="255"></textarea>
+        <label htmlFor="info">Info.</label>
+    </span>
+    <span class="flex justify-content-between">
+        <p-button (click)="volver()" label="Volver" styleClass="p-button-outlined p-button-secondary"></p-button>
+        <p-button type="submit" label="Guardar"></p-button>
+    </span>
+</form>

@@ -1,9 +1,12 @@
 <div class="container">
-    <h3>Mis habilidades</h3>
-    <div class="containerKnob grid lg:col-8">
+    <div class="flex align-items-center">
+        <h3>Habilidades</h3>
+        <p-button *ngIf="modoEdicion" icon="pi pi-plus" styleClass="p-button-rounded" class="btn-size-sm" (click)="newSkill()"></p-button>
+    </div>
+    <div *ngIf="skills.length > 0" class="grid lg:col-8 containerKnob">
         <ng-container *ngFor="let skill of skills">
             <div class="col-6 sm:col-3 xl:col-2">
-                <app-item-skill [skill]="skill"></app-item-skill>
+                <app-item-skill [skill]="skill" [modoEdicion]="modoEdicion" (emitDelete)="deleteSkill($event)"></app-item-skill>
             </div>
         </ng-container>  
     </div>

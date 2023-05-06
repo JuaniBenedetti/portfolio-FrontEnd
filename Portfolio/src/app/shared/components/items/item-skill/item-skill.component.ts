@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Skill } from 'src/app/model/Skill';
 
 @Component({
@@ -9,11 +9,16 @@ import { Skill } from 'src/app/model/Skill';
 export class ItemSkillComponent implements OnInit {
 
   @Input() skill: Skill;
+  @Input() modoEdicion: boolean = false;
 
-  constructor() { }
+  @Output() emitDelete = new EventEmitter<Skill>();
+
+  constructor( ) { }
 
   ngOnInit(): void {
-    console.log(this.skill);
   }
-
+  
+  deleteSkill(): void {
+    this.emitDelete.emit(this.skill);
+  }
 }

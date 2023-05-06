@@ -1,7 +1,13 @@
 <div class="container">
-    <h3>Mi experiencia</h3>
+    <div class="flex align-items-center">
+        <h3>Experiencia</h3>
+        <p-button *ngIf="modoEdicion" (click)="editExperiencia()" icon="pi pi-plus" styleClass="p-button-rounded" class="btn-size-sm"></p-button>
+    </div>
     <ng-container *ngFor="let experiencia of experiencias">
-        <app-item-experiencia [experiencia]="experiencia"></app-item-experiencia>
+        <app-item-experiencia #item [experiencia]="experiencia" [modoEdicion]="modoEdicion" (emitEdit)="editExperiencia($event)" (emitDelete)="deleteExperiencia($event)"></app-item-experiencia>
     </ng-container>  
 </div>
 <p-divider></p-divider>
+
+
+<p-confirmDialog></p-confirmDialog>

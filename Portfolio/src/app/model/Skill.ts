@@ -1,5 +1,5 @@
 export class Skill {
-    idSoftSkill: number;
+    idSkill: number;
     nombre: string;
     porcentaje: number;
 }

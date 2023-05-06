@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Experiencia } from 'src/app/model/Experiencia';
 
@@ -10,6 +10,10 @@ import { Experiencia } from 'src/app/model/Experiencia';
 export class ItemExperienciaComponent implements OnInit {
 
   @Input() experiencia: Experiencia;
+  @Input() modoEdicion: boolean = false;
+
+  @Output() emitDelete = new EventEmitter<Experiencia>();
+  @Output() emitEdit = new EventEmitter<Experiencia>();
 
   logoEmpresa: SafeUrl;
 
@@ -20,9 +24,17 @@ export class ItemExperienciaComponent implements OnInit {
   }
 
   loadLogo(): void {
-    if(this.experiencia.logoEmpresa) {
-      let objectURL = 'data:image/png;base64,' + this.experiencia.logoEmpresa;
+    if(this.experiencia.imgLogoEmpresa?.img) {
+      let objectURL = 'data:image/png;base64,' + this.experiencia.imgLogoEmpresa.img;
       this.logoEmpresa = this.sanitizer.bypassSecurityTrustUrl(objectURL);
     } else { this.logoEmpresa = "assets\\images\\ProfileNotFound.png"; }
+  }
+
+  edit(): void {
+    this.emitEdit.emit(this.experiencia);
+  }
+
+  delete(): void {
+    this.emitDelete.emit(this.experiencia);
   }
 }
