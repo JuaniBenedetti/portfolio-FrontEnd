@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { urlRailway } from 'src/app/global';
 import { Proyecto } from 'src/app/model/Proyecto';
 
 @Injectable({
@@ -11,14 +12,14 @@ export class ProyectoService {
   constructor(private http: HttpClient) { }
 
   save(proyecto: Proyecto): Observable<Proyecto> {
-    return this.http.post<Proyecto>('http://localhost:8080/proyecto/save', proyecto);
+    return this.http.post<Proyecto>(urlRailway + 'proyecto/save', proyecto);
   }
   
   update(proyecto: Proyecto): Observable<Proyecto> {
-    return this.http.put<Proyecto>('http://localhost:8080/proyecto/update', proyecto);
+    return this.http.put<Proyecto>(urlRailway + 'proyecto/update', proyecto);
   }
 
   deleteById(idProyecto: number) {
-    return this.http.delete(`http://localhost:8080/proyecto/delete?id=${idProyecto}`);
+    return this.http.delete(urlRailway + `proyecto/delete?id=${idProyecto}`);
   }
 }

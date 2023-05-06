@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { urlRailway } from 'src/app/global';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class LoginService {
 
   logIn(username: string, password: string) {
     this.http.post(
-      "http://localhost:8080/login", 
+      urlRailway + 'login', 
       {"username": username,"password": password},
       {observe: 'response'}
     ).subscribe((res) => this.setToken(res.headers.get('Authorization') || ""));
