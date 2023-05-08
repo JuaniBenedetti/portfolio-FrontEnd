@@ -50,8 +50,10 @@ export class ItemEducacionComponent implements OnInit {
 
     this.ref.onClose.subscribe((edu: {'educacion': Educacion, 'imgFile': File}) => {
       this._educacion.update({ ...this.educacion, ...edu.educacion }).subscribe(eduBack => {
-        this.educacion = eduBack; 
-        edu.imgFile ? this.uploadImg(eduBack, edu.imgFile) : null;
+        if(eduBack) {
+          this.educacion = eduBack; 
+          edu.imgFile ? this.uploadImg(eduBack, edu.imgFile) : null;
+        }
       });
     });
   }
