@@ -21,7 +21,6 @@ export class ItemExperienciaComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadLogo();
-    console.log(this.experiencia);
   }
 
   loadLogo(): void {
