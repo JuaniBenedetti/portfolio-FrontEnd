@@ -34,9 +34,11 @@ export class ProyectoComponent implements OnInit {
     });
 
     this.ref.onClose.subscribe((pro: Proyecto) => {
-      this._proyecto.save(pro).subscribe(proBack => {
-        this.proyectos.push(proBack);
-      });
+      if(pro) {
+        this._proyecto.save(pro).subscribe(proBack => {
+          this.proyectos.push(proBack);
+        });
+      }
     });
   }
 

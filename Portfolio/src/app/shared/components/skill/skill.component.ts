@@ -36,7 +36,7 @@ export class SkillComponent implements OnInit {
       header: 'Nueva habilidad',
     });
 
-    this.ref.onClose.subscribe(nuevaSkill => this.skills.push(nuevaSkill));
+    this.ref.onClose.subscribe(nuevaSkill => nuevaSkill ? this.skills.push(nuevaSkill) : null);
   }
 
   deleteSkill(skill: Skill): void {

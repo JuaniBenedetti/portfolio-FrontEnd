@@ -21,13 +21,14 @@ export class ItemExperienciaComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadLogo();
+    console.log(this.experiencia);
   }
 
   loadLogo(): void {
     if(this.experiencia.imgLogoEmpresa?.img) {
       let objectURL = 'data:image/png;base64,' + this.experiencia.imgLogoEmpresa.img;
       this.logoEmpresa = this.sanitizer.bypassSecurityTrustUrl(objectURL);
-    } else { this.logoEmpresa = "assets\\images\\ProfileNotFound.png"; }
+    } else { this.logoEmpresa = "assets\\images\\experienciaNotFound.png"; }
   }
 
   edit(): void {

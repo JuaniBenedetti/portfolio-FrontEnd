@@ -38,7 +38,7 @@ export class ItemEducacionComponent implements OnInit {
     if(this.educacion.imgLogoInstitucion?.img) {
       let objectURL = 'data:image/png;base64,' + this.educacion.imgLogoInstitucion.img;
       this.logoInstitucion = this.sanitizer.bypassSecurityTrustUrl(objectURL);
-    } else { this.logoInstitucion = "assets\\images\\ProfileNotFound.png"; }
+    } else { this.logoInstitucion = "assets\\images\\educacionNotFound.png"; }
   }
 
   edit(): void {

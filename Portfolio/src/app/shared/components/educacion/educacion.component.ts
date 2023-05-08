@@ -34,14 +34,16 @@ export class EducacionComponent implements OnInit {
     });
 
     this.ref.onClose.subscribe((edu: {'educacion': Educacion, 'imgFile': File}) => {
-      this._educacion.save(edu.educacion).subscribe(eduBack => {
-        if(edu.imgFile) {
-          this.uploadImg(eduBack , edu.imgFile);
-        }
-        else {
-          this.educacion.push(eduBack);
-        }
-      });
+      if(edu) {
+        this._educacion.save(edu.educacion).subscribe(eduBack => {
+          if(edu.imgFile) {
+            this.uploadImg(eduBack , edu.imgFile);
+          }
+          else {
+            this.educacion.push(eduBack);
+          }
+        });
+      }
     });
   }
 

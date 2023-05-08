@@ -18,7 +18,7 @@
                 <p class="bold">Desde:</p><p>{{educacion.fechaInicio | date:"dd/MM/yy"}}</p>
             </div>
             <div class="col flex">
-                <p class="bold">Hasta:</p><p>{{educacion.fechaFin | date:"dd/MM/yy"}}</p>
+                <p class="bold">Hasta:</p><p>{{(educacion.fechaFin | date:"dd/MM/yy") || "Actualidad"}}</p>
             </div>
         </div>
     </div>

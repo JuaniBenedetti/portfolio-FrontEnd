@@ -40,11 +40,11 @@ export class InformacionComponent implements OnInit {
     if(this.informacion?.imgFotoPerfil) {
       let objectURL = 'data:image/png;base64,' + this.informacion.imgFotoPerfil.img;
       this.profileURL = this.sanitizer.bypassSecurityTrustUrl(objectURL);
-    } else { this.profileURL = "assets\\images\\ProfileNotFound.png"; }
+    } else { this.profileURL = "assets\\images\\profileNotFound.png"; }
     if(this.informacion?.imgFotoPortada) {
       let objectURL = 'data:image/png;base64,' + this.informacion.imgFotoPortada.img;
       this.coverURL = this.sanitizer.bypassSecurityTrustUrl(objectURL);
-    } else { this.coverURL = "assets\\images\\CoverNotFound.png"; }
+    } else { this.coverURL = "assets\\images\\coverNotFound.png"; }
   }
 
   editarInformacion(): void {
